@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F28Q22D1LS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F28Q22D1LS');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description" content="Extreme Parkour with Legged Robots">
+  <meta name="keywords" content="Locomotion, Parkour, Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extreme Parkour</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
+  <script src="./static/js/isInViewport.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <link rel="icon" href="./favicon.ico?">
+  
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://extreme-parkour.github.io">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Related Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://vision-locomotion.github.io/">
+              Vision Locomotion
+            </a>
+            <a class="navbar-item" href="https://robot-skills.github.io">
+              Legs as Manipulator
+            </a>
+            <a class="navbar-item" href="https://robot-parkour.github.io">
+              Robot Parkour Learning
+            </a>
+            <!--<a class="navbar-item" href="https://yandongji.github.io/soccer-dribbling/">
+              Soccer-Dribbling
+            </a>
+            <a class="navbar-item" href="https://xbpeng.github.io/projects/A1SoccerShooting/index.html">
+              Soccer-Shooting
+            </a> -->
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+
+  
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Extreme Parkour with Legged Robots</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://chengxuxin.github.io">Xuxin Cheng*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://tenhearts.github.io">Kexin Shi*</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://anag.me">Ananye Agarwal</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a>
+              <br><br>
+              <img src="./resources/cmu-wordmark-horizontal-r.png" width="60%"></img>
+              <!-- <span class="brmod"><b>ICRA 2024 Submission</b></span> -->
+            </span>
+          </div>
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./resources/parkour.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              
+              <!-- Poster Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="far fa-file"></i>
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span> -->
+
+
+              <!-- twitter Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Summary</span>
+                </a>
+              </span>
+
+              <!-- code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/chengxuxin/extreme-parkour" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <div class="is-centered">
+          <center>
+          <video autoplay muted loop playsinline controls poster="./resources/loading-icon.gif" style="width: 90%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/Full/Full-fixed.mp4" type="video/mp4">
+          </video>
+          </center>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper video. -->
+
+<section class="section" style="padding-bottom: 0">
+  <div class="container">
+    <div id="method_video" class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds no-bottom-padding">
+        <!-- <video controls src="./camera-ready-video-v2-compressed.mp4" style="border: 1px solid #bbb; border-radius: 10px; width: 100%;"> -->
+          <iframe height="500" src="https://www.youtube.com/embed/aOGqlorRQpc?si=amnNAIi_GNE0oD7A" title="YouTube video player" frameborder="0" style="border: 1px solid #bbb; border-radius: 10px; width: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <div class="is-centered">
+          <video autoplay muted loop playsinline poster="./resources/loading-icon.gif" style="width: 28%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/Robustness/Robustness-1-comp.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline poster="./resources/loading-icon.gif" style="width: 28%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/Gap/gap0.8.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline poster="./resources/loading-icon.gif" style="width: 28%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/FullParkour_FixedCam.mov" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            <strong>Quadrupedal robot expands its capabilities by synthesizing agile locomotion and legged manipulation skills.</strong>
+          </h2> -->
+      <!-- </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+
+  <div class="container">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans can perform parkour by traversing obstacles in a highly dynamic fashion requiring precise eyemuscle coordination and movement. Getting robots to do the same task requires overcoming similar challenges. Classically, this is done by independently engineering perception, actuation, and control systems to very low tolerances. This restricts them to tightly controlled settings such as a predetermined obstacle course in labs. In contrast, humans are able to learn parkour through practice without significantly changing their underlying biology. In this paper, we take a similar approach to developing robot parkour on a small low-cost robot with imprecise actuation and a single front-facing depth camera for perception which is low-frequency, jittery, and prone to artifacts. We show how a single neural net policy operating directly from a camera image, trained in simulation with largescale RL, can overcome imprecise sensing and actuation to output highly precise control behavior end-to-end. We show our robot can perform a high jump on obstacles 2x its height, long jump across gaps 2x its length, do a handstand and run across tilted ramps, and generalize to novel obstacle courses with different physical properties.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br/>
+  <br/>
+  <br/>
+
+
+    <!-- <div id="method_video" class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds is-centered">
+        <h2 class="title is-2">Project Video</h2>
+        <div class="is-centered">
+          <video controls muted playsinline" style="max-width: 80%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/main.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> -->
+  <!-- </div> -->
+
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Extreme Cases</h2>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Step/Step0.5.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Gap/gap0.8.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Handstand</h2>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Handstand/Handstand_Downstair_Handhold.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Handstand/Handstand_Grass_Perfect.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Ramp</h2>
+        <p>
+          <center>
+            Fully autonomous without any human teleoperation.
+          </center>
+        </p>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Ramp/Ramp1.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Ramp/Ramp2.mp4" height="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Parkour Course</h2>
+        <!-- <p>
+          <center>
+            Fully autonomous without any human teleoperation.
+          </center>
+        </p> -->
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Full/FullParkourStep_Perfect.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Full/FullParkourHandstand.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Step</h2>
+        <!-- <tr>
+          <td>
+              <h2 class="subtitle">
+                  The robot is able to climb stairs upto 24cm high and only 30cm wide while climbing curbs upto 26cm high. Our policy generalizes to different stairs and curbs under a variety of lighting conditions. On out-of-distribution stairs and curbs, the robot initially gets stuck but is eventually able to traverse them using an emergent climbing up behavior.   
+              </h2>
+          </td>
+        </tr> -->
+        <tr>
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Step/Step-wild.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Step/Step-outdoor-3.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Step/Outdoor_StepOn+Down0.4.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Step/Step0.4-bottom_view.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+            <!-- <div class="row">
+              <div class="col">
+                  <video playsinline autoplay loop muted src="./resources/real-world-1/0_compressed.MOV" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video playsinline autoplay loop muted src="./resources/real-world-2/good-IMG_0020_compressed.MOV" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br> -->
+            
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Gap</h2>
+        <!-- <p>
+          <center>
+            Fully autonomous without any human teleoperation.
+          </center>
+        </p> -->
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Gap/gap0.8.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Gap/Outdoor_Gap0.5.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Hurdle</h2>
+        <!-- <p>
+          <center>
+            Fully autonomous without any human teleoperation.
+          </center>
+        </p> -->
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Hurdle/Hurdle2.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Hurdle/Hurdle1.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Robustness</h2>
+        <!-- <p>
+          <center>
+            Fully autonomous without any human teleoperation.
+          </center>
+        </p> -->
+          <td>
+            <div class="row">
+              <div class="col">
+                  <video autoplay muted loop playsinline controls src="./resources/Robustness/Robustness-1-comp.mp4" width="100%"
+                         style="border-radius:10px; "></video>
+              </div>
+              <div class="col">
+                <video autoplay muted loop playsinline controls src="./resources/Robustness/Robustness-2-comp.mp4" width="100%"
+                       style="border-radius:10px; "></video>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2" style="text-align: center; padding-bottom: 10px;">Baselines</h2>
+        <tr>
+          <td>
+            <div class="row">
+              <div class="columns is-centered">
+                <div class="col">
+                  <h2 class="subtitle">
+                    Failure case from <a href="https://vision-locomotion.github.io/">Vision locomotion</a> project. It falls downstair. 
+                  </h2>
+                  <video autoplay muted loop playsinline controls src="./resources/Failure/failure-curb-compressed.mp4" width="100%"
+                        style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                    <h2 class="subtitle">
+                      Without clearance reward, the robot easily touches the edge and fails on large gap terrain.
+                    </h2>
+                    <video autoplay muted loop playsinline controls src="./resources/Failure/Gap.mp4" width="100%"
+                          style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                  <h2 class="subtitle">
+                    Without direction distillation, it is hard to contorl the robot via joystick on the ramp terrain.
+                  </h2>
+                  <video autoplay muted loop playsinline controls src="./resources/Failure/Ramp.mp4" width="100%"
+                        style="border-radius:10px; "></video>
+                </div>
+              </div>
+            </div>
+            <br>
+          </td>
+        </tr>
+      </div> 
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <h2 class="title is-2" style="text-align: center;">Method</h2>
+          <center>
+          <video autoplay muted loop playsinline poster="./resources/loading-icon.gif" style="width: 100%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/Full/method.mp4" type="video/mp4">
+          </video>
+          </center>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;" id="press-coverage">Press Coverage</h2>
+    <br>
+    <div class="columns is-centered">
+      <div class="column is-centered has-text-centered">
+        <a target="_blank" href="https://spectrum.ieee.org/climbing-legged-robot">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/IEEE-Spectrum.svg" width="90%"></img>
+        </a>
+      </div>
+  </div>
+</section> -->
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="titile">BibTeX</h2>
+    <pre><code>
+@inproceedings{
+}
+</code></pre>
+  </div>
+</section>
+
+
+</body>
+
+<script>
+  var mainLoopId = setInterval(function(){
+        $('video').not('#teaser').each(function(){
+      if ($(this).is(":in-viewport")) {
+          $(this)[0].play();
+      } else {
+          $(this)[0].pause();
+      }
+      })
+    },200);
+</script>
+
+</html>
